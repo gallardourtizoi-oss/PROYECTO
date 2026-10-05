@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica 6 - Octavio Ismael Gallardo Urtiz</title>
+  <style>
+    body {
+      background-color: #00008B;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ESTILOS DEL FORMULARIO */
+    .contenedor-form {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #0a0e17;
+      padding: 35px;
+      border-radius: 18px;
+      border: 2px solid #00f2fe;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #00f2fe;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      background: #161e2e;
+      border: 1.5px solid #00f2fe;
+      border-radius: 10px;
+      color: white;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #ff007f;
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+    }
+
+    .btn {
+      background: #00f2fe;
+      color: black;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00f2fe;
+    }
+
+    .btn-reset {
+      background: #ff4757;
+      color: white;
+    }
+
+    .btn-reset:hover {
+      box-shadow: 0 0 15px #ff4757;
+    }
+
+    /* BOTÓN VOLVER (ESTILO NEÓN CENTRADO) */
+    .btn-volver-container {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0, 0, 60, 0.8);
+      border-bottom: 2px solid #00f2fe;
+    }
+
+    .btn-volver {
+      background: linear-gradient(45deg, #00f2fe, #7928ca);
+      color: #ffffff;
+      border: 2px solid #00f2fe;
+      padding: 14px 35px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(0, 242, 254, 0.6);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-volver:hover {
+      background: linear-gradient(45deg, #ff007f, #00f2fe);
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECCIÓN 1: FORMULARIO VACÍO -->
+  <div id="seccion-formulario" class="contenedor-form">
+    <h1 style="color: #00f2fe; text-align: center; margin-bottom: 25px;">FORMULARIO DE OPINIÓN</h1>
+    
+    <form id="miFormulario" onsubmit="event.preventDefault(); document.getElementById('seccion-formulario').style.display='none'; document.getElementById('seccion-artistas').style.display='block';">
+      
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre completo aquí..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Comentarios / Opinión</label>
+        <textarea id="mensaje" rows="5" placeholder="Escribe tu opinión sobre la página y los artistas..." required></textarea>
+      </div>
+
+      <div style="text-align: center; display: flex; justify-content: center; gap: 15px;">
+        <button class="btn" type="submit">Enviar e Ir a Artistas</button>
+        <button class="btn btn-reset" type="reset">Limpiar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- SECCIÓN 2: PÁGINA DE ARTISTAS -->
+  <div id="seccion-artistas" style="display: none;">
+    
+    <!-- BOTÓN VOLVER PADRE Y CENTRADO -->
+    <div class="btn-volver-container">
+      <button class="btn-volver" onclick="document.getElementById('seccion-artistas').style.display='none'; document.getElementById('seccion-formulario').style.display='block';">
+        ← Volver al Formulario
+      </button>
+    </div>
+
+    <table bgcolor="#00008B" border="0" cellpadding="10" cellspacing="10" width="100%">
+      
+      <!-- ENCABEZADO -->
+      <tr align="CENTER">
+        <td colspan="5">
+          <img src="musica anim.gif" width="120" height="160" align="left" onerror="this.style.display='none'">
+          <img src="manos.jpg" width="120" height="120" align="right" onerror="this.style.display='none'">
+          <img src="cantando.jpg" width="120" height="120" align="right" onerror="this.style.display='none'">
+          <font color="#FFFF00" size="7" face="Arial Rounded MT Bold"><b>MI MÚSICA, CANTANTES Y ARTISTAS FAVORITOS</b></font>
+        </td>
+      </tr>
+
+      <!-- NAVEGACIÓN -->
+      <tr align="CENTER">
+        <td><img src="musicat.jpg" width="120" height="60" onerror="this.style.display='none'"></td>
+        <td><img src="video1.jpg" width="120" height="60" onerror="this.style.display='none'"></td>
+        <td><img src="video2.jpg" width="120" height="60" onerror="this.style.display='none'"></td>
+        <td><img src="radio1.jpg" width="120" height="60" onerror="this.style.display='none'"></td>
+        <td><img src="radio2.jpg" width="120" height="60" onerror="this.style.display='none'"></td>
+      </tr>
+
+      <!-- TÍTULOS DE SECCIONES -->
+      <tr>
+        <th bgcolor="white" colspan="2"><font color="red" size="6" face="Arial Narrow"><b>Cantantes Famosos</b></font></th>
+        <td width="5%"></td>
+        <th bgcolor="white"><font color="red" size="6" face="Arial Narrow"><b>Noticias</b></font></th>
+        <th bgcolor="white"><font color="red" size="6" face="Arial Narrow"><b>Peliculas</b></font></th>
+      </tr>
+
+      <!-- ARIEL CAMACHO -->
+      <tr>
+        <td align="CENTER"><img src="ariel.jpg" width="220" height="350" onerror="this.style.display='none'"></td>
+        <td width="45%">
+          <font color="white" size="4" face="Arial Narrow">
+            <b>Ariel Camacho:</b> José Ariel Camacho Barraza fue un emblemático cantautor y requintera sinaloense, pionero del movimiento sierreño urbano.<br><br>
+            <a href="https://www.youtube.com/watch?v=y0fJfZcB5zM" target="_blank" style="background: red; color: white; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">▶️ Escuchar "Hablemos"</a>
+          </font>
+        </td>
+        <td align="CENTER"><img src="televisa.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Televisa Noticias</font></td>
+        <td align="CENTER"><img src="cinepolis.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Cinépolis</font></td>
+      </tr>
+
+      <!-- LOS FARMERZ -->
+      <tr>
+        <td align="CENTER"><img src="farmerz.jpg" width="220" height="350" onerror="this.style.display='none'"></td>
+        <td width="45%">
+          <font color="white" size="4" face="Arial Narrow">
+            <b>Los Farmerz:</b> Grupo de música regional mexicana originario de Sinaloa con corridos de la sierra y estilo norteño-banda.<br><br>
+            <a href="https://www.youtube.com/watch?v=PKMAkJQcSHA" target="_blank" style="background: red; color: white; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">▶️ Escuchar "La Changa"</a>
+          </font>
+        </td>
+        <td align="CENTER"><img src="abierta.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Televisión Abierta</font></td>
+        <td align="CENTER"><img src="cinemex.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Cinemex</font></td>
+      </tr>
+
+      <!-- LOS DOS DE TAMAULIPAS -->
+      <tr>
+        <td align="CENTER"><img src="tamaulipas.jpg" width="220" height="350" onerror="this.style.display='none'"></td>
+        <td width="45%">
+          <font color="white" size="4" face="Arial Narrow">
+            <b>Los Dos de Tamaulipas:</b> Agrupación norteña formada por los gemelos Rolando y Orlando Zapata.<br><br>
+            <a href="https://www.youtube.com/watch?v=4s0XX4h1-Ck" target="_blank" style="background: red; color: white; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">▶️ Escuchar "Sola"</a>
+          </font>
+        </td>
+        <td align="CENTER"><img src="tvazteca.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">TV Azteca</font></td>
+        <td align="CENTER"><img src="cinema.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Cinema</font></td>
+      </tr>
+
+      <!-- EL MAKABELICO -->
+      <tr>
+        <td align="CENTER"><img src="makabelico.jpg" width="220" height="350" onerror="this.style.display='none'"></td>
+        <td width="45%">
+          <font color="white" size="4" face="Arial Narrow">
+            <b>El Makabelico:</b> Exponente del rap urbano y hip-hop en México, famoso por el género "bélico-rap".<br><br>
+            <a href="https://www.youtube.com/watch?v=BDSCipzIpmo" target="_blank" style="background: red; color: white; padding: 10px 18px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">▶️ Escuchar "El Two Six"</a>
+          </font>
+        </td>
+        <td align="CENTER"><img src="heraldo.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">El Heraldo</font></td>
+        <td align="CENTER"><img src="cinecolombia.jpg" width="160" height="110" onerror="this.style.display='none'"><br><br><font color="white">Cine Colombia</font></td>
+      </tr>
+
+    </table>
+  </div>
+
+</body>
+</html>
